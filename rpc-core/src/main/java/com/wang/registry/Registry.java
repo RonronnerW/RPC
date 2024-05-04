@@ -3,7 +3,9 @@ package com.wang.registry;
 import com.wang.config.RegistryConfig;
 import com.wang.model.ServiceMetaInfo;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public interface Registry {
 
@@ -37,19 +39,12 @@ public interface Registry {
     List<ServiceMetaInfo> serviceDiscovery(String serviceKey);
 
     /**
-     * 心跳检测（服务端）
-     */
-    void heartBeat();
-
-    /**
-     * 监听（消费端）
-     *
-     * @param serviceNodeKey
-     */
-    void watch(String serviceNodeKey);
-
-    /**
      * 服务销毁
      */
     void destroy();
+
+    /**
+     * 心跳检测（服务端）
+     */
+    void heartBeat();
 }

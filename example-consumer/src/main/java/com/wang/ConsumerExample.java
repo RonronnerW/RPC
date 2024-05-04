@@ -3,17 +3,14 @@ package com.wang;
 import com.wang.config.RpcConfig;
 import com.wang.model.User;
 import com.wang.proxy.ServiceProxyFactory;
-import com.wang.serializer.Serializer;
 import com.wang.service.UserService;
 import com.wang.utils.ConfigUtils;
-
-import java.io.IOException;
 
 /**
  * @author wanglibin
  * @version 1.0
  */
-public class EasyConsumerExample {
+public class ConsumerExample {
     public static void main(String[] args) {
         RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
         System.out.println(rpc.getName());

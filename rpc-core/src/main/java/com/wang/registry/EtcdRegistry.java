@@ -1,16 +1,23 @@
 package com.wang.registry;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.cron.CronUtil;
+import cn.hutool.cron.task.Task;
 import cn.hutool.json.JSONUtil;
 import com.wang.config.RegistryConfig;
 import com.wang.model.ServiceMetaInfo;
 import io.etcd.jetcd.*;
+import io.etcd.jetcd.kv.GetResponse;
 import io.etcd.jetcd.options.GetOption;
 import io.etcd.jetcd.options.PutOption;
 import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
@@ -27,6 +34,11 @@ public class EtcdRegistry implements Registry{
 
     private static final String ETCD_ROOT_PATH = "/rpc/";
 
+    /**
+     * 本机注册节点的集合（用于维护续期）
+     */
+    private final Set<String> localRegisterNodeKeySet = new HashSet<>();
+
     @Override
     public void init(RegistryConfig registryConfig) {
         // create client using endpoints
@@ -35,6 +47,9 @@ public class EtcdRegistry implements Registry{
                 .connectTimeout(Duration.ofMillis(registryConfig.getTimeout()))
                 .build();
         kvClient = client.getKVClient();
+
+        // 开启心跳检测
+        heartBeat();
     }
 
     @Override
@@ -53,6 +68,9 @@ public class EtcdRegistry implements Registry{
         PutOption putOption = PutOption.newBuilder().withLeaseId(leaseId).build();
         // put the key-value
         kvClient.put(key, value, putOption).get();
+
+        // 添加节点key到集合中用于续期
+        localRegisterNodeKeySet.add(registerKey);
     }
 
     @Override
@@ -60,6 +78,8 @@ public class EtcdRegistry implements Registry{
         String registerKey = ETCD_ROOT_PATH+serviceMetaInfo.getServiceNodeKey();
         ByteSequence key = ByteSequence.from(registerKey, StandardCharsets.UTF_8);
         kvClient.delete(key);
+
+        localRegisterNodeKeySet.remove(registerKey);
     }
 
     @Override
@@ -84,17 +104,6 @@ public class EtcdRegistry implements Registry{
             throw new RuntimeException(e);
         }
     }
-
-    @Override
-    public void heartBeat() {
-
-    }
-
-    @Override
-    public void watch(String serviceNodeKey) {
-
-    }
-
     /**
      * 注册中心销毁，用于项目关闭后释放资源
      */
@@ -107,5 +116,37 @@ public class EtcdRegistry implements Registry{
         if(client!=null) {
             client.close();
         }
+    }
+
+    /**
+     * 心跳检测-CronUtil定时任务实现对集合中的节点重新注册
+     */
+    @Override
+    public void heartBeat() {
+        // 10s 续签一次
+        CronUtil.schedule("*/10 * * * * *", new Task() {
+            @Override
+            public void execute() {
+                for (String registerKey : localRegisterNodeKeySet) {
+                    try {
+                        List<KeyValue> keyValues = kvClient.get(ByteSequence.from(registerKey, StandardCharsets.UTF_8))
+                                .get()
+                                .getKvs();
+                        if(CollUtil.isEmpty(keyValues)) {
+                            continue;
+                        }
+                        KeyValue keyValue = keyValues.get(0);
+                        String value = keyValue.getValue().toString(StandardCharsets.UTF_8);
+                        ServiceMetaInfo serviceMetaInfo = JSONUtil.toBean(value, ServiceMetaInfo.class);
+                        register(serviceMetaInfo);
+                    } catch (Exception e) {
+                        throw new RuntimeException(registerKey+" 续期失败 "+e);
+                    }
+                }
+            }
+        });
+        // 支持秒级别定时
+        CronUtil.setMatchSecond(true);
+        CronUtil.start();
     }
 }
