@@ -19,6 +19,11 @@ public class SerializerFactory {
 //        put(SerializerKeys.HESSIAN, new HessianSerializer());
 //        put(SerializerKeys.KRYO, new KryoSerializer());
 //    }};
+
+    /**
+     * 静态代码块
+     * 工厂首次加载时就会调用，然后加载序列化器接口的所有实现类，然后调用getInstance方法获取指定实现类对象
+     */
     static {
         SpiLoader.load(Serializer.class);
     }

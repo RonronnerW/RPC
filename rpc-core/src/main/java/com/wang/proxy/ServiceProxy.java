@@ -45,16 +45,18 @@ public class ServiceProxy implements InvocationHandler {
 
             // 从注册中心获取服务提供者请求地址
             RpcConfig rpcConfig = RpcApplication.getRpcConfig();
+            // 1. 根据配置中心注册中心类型获取注册中心对象
             Registry registry = RegistryFactory.getInstance(rpcConfig.getRegistryConfig().getRegistry());
+            // 2. 获取键名
             ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
             serviceMetaInfo.setServiceName(serviceName);
             serviceMetaInfo.setServiceVersion(RpcConstant.DEFAULT_SERVICE_VERSION);
+            // 3. 服务发现
             List<ServiceMetaInfo> serviceMetaInfoList = registry.serviceDiscovery(serviceMetaInfo.getServiceKey());
             if (CollUtil.isEmpty(serviceMetaInfoList)) {
                 throw new RuntimeException("暂无服务地址");
             }
-
-            // 暂时先获取第一个
+            // 4. 暂时先获取第一个注册中心地址
             ServiceMetaInfo metaInfo = serviceMetaInfoList.get(0);
 
             // 发送请求

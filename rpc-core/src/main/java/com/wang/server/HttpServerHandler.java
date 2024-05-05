@@ -76,10 +76,9 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     void doResponse(HttpServerRequest request, RpcResponse rpcResponse, Serializer serializer) {
         HttpServerResponse httpServerResponse = request.response()
                 .putHeader("content-type", "application/json");
-        byte[] serialize = new byte[0];
         try {
-            serialize = serializer.serialize(rpcResponse);
-            httpServerResponse.end(Buffer.buffer(serialize));
+            byte[] serialized = serializer.serialize(rpcResponse);
+            httpServerResponse.end(Buffer.buffer(serialized));
         } catch (IOException e) {
             e.printStackTrace();
             httpServerResponse.end(Buffer.buffer());

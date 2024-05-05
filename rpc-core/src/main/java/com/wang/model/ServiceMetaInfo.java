@@ -7,6 +7,7 @@ import lombok.Data;
 /**
  * @author wanglibin
  * @version 1.0
+ * 注册信息定义
  */
 @Data
 public class ServiceMetaInfo {
@@ -36,7 +37,7 @@ public class ServiceMetaInfo {
      * @return
      */
     public String getServiceKey() {
-        return String.format("%s.%s", serviceName, serviceVersion);
+        return String.format("%s:%s", serviceName, serviceVersion);
     }
 
     /**
@@ -44,7 +45,7 @@ public class ServiceMetaInfo {
      * @return
      */
     public String getServiceNodeKey() {
-        return String.format("%s/%s.%s", getServiceKey(), serviceHost, servicePort);
+        return String.format("%s/%s:%s", getServiceKey(), serviceHost, servicePort);
     }
 
     /**
@@ -55,7 +56,7 @@ public class ServiceMetaInfo {
         if(!StrUtil.contains(serviceHost, "http")) {
             return String.format("http://%s:%s", serviceHost, servicePort);
         }
-        return String.format("h%s:%s", serviceHost, servicePort);
+        return String.format("%s:%s", serviceHost, servicePort);
     }
 
 }
