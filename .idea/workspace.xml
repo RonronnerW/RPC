@@ -64,7 +64,7 @@
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\system" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RegistryTest.heartBeat">
+  <component name="RunManager" selected="Application.ConsumerExample">
     <configuration name="ConsumerExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wang.ConsumerExample" />
       <module name="example-consumer" />
@@ -150,9 +150,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConsumerExample" />
+        <item itemvalue="Application.ProviderExample" />
         <item itemvalue="JUnit.RegistryTest.heartBeat" />
         <item itemvalue="JUnit.RegistryTest" />
-        <item itemvalue="Application.ProviderExample" />
         <item itemvalue="Application.SpiLoader" />
       </list>
     </recent_temporary>
