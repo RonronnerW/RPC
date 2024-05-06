@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11accd38-145c-4ba0-ae47-bfacae6fb5bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/ServiceMetaInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/ServiceMetaInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/rpc.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rpc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-provider/src/main/java/com/wang/ProviderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-provider/src/main/java/com/wang/ProviderExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageTypeEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/SerializerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/SerializerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/HttpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/HttpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/VertHttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/VertxHttpServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,34 +35,44 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2fw6sOBTxfzQJVpPdcUuRq2BKQr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/项目/RPC/RPC/example-provider&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/项目/RPC/RPC/rpc-easy/src/main/java/com/wang/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15429688&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/Maven/repository/io/vertx/vertx-core/4.5.7/vertx-core-4.5.7.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "E:/项目/RPC/RPC/rpc-easy/src/main/java/com/wang/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15429688",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wang.server.tcp" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INF\rpc\system" />
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\custom" />
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\system" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wang.server.tcp" />
+      <recent name="com.wang.registry" />
     </key>
   </component>
   <component name="RunManager" selected="Application.ConsumerExample">
@@ -91,15 +102,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpiLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wang.spi.SpiLoader" />
+    <configuration name="ProtocolMessageTest.testEncodeAndDecode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpc-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wang.spi.*" />
+          <option name="PATTERN" value="com.wang.protocol.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.wang.protocol" />
+      <option name="MAIN_CLASS_NAME" value="com.wang.protocol.ProtocolMessageTest" />
+      <option name="METHOD_NAME" value="testEncodeAndDecode" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,9 +166,9 @@
       <list>
         <item itemvalue="Application.ConsumerExample" />
         <item itemvalue="Application.ProviderExample" />
+        <item itemvalue="JUnit.ProtocolMessageTest.testEncodeAndDecode" />
         <item itemvalue="JUnit.RegistryTest.heartBeat" />
         <item itemvalue="JUnit.RegistryTest" />
-        <item itemvalue="Application.SpiLoader" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +185,7 @@
       <workItem from="1714724545987" duration="16266000" />
       <workItem from="1714784450321" duration="12198000" />
       <workItem from="1714872944780" duration="10013000" />
+      <workItem from="1714965270035" duration="15555000" />
     </task>
     <servers />
   </component>
@@ -189,6 +204,11 @@
           <url>file://$PROJECT_DIR$/rpc-easy/src/main/java/com/wang/proxy/ServiceProxy.java</url>
           <line>34</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/EtcdRegistry.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

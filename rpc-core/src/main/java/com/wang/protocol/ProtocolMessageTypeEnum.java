@@ -2,6 +2,10 @@ package com.wang.protocol;
 
 import lombok.Getter;
 
+/**
+ * 消息类型枚举类
+ * 请求、响应、心跳、其他
+ */
 @Getter
 public enum ProtocolMessageTypeEnum {
 

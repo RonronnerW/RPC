@@ -2,12 +2,15 @@ package com.wang.protocol;
 
 import lombok.Getter;
 
+/**
+ * 消息状态枚举类
+ */
 @Getter
 public enum ProtocolMessageStatusEnum {
 
-    OK("ok", 20),
-    BAD_REQUEST("badRequest", 40),
-    BAD_RESPONSE("badResponse", 50);
+    OK("ok", 200),
+    BAD_REQUEST("badRequest", 400),
+    BAD_RESPONSE("badResponse", 500);
 
     private final String text;
 

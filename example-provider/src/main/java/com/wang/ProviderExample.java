@@ -1,18 +1,14 @@
 package com.wang;
 
-import cn.hutool.core.collection.CollUtil;
 import com.wang.config.RegistryConfig;
 import com.wang.config.RpcConfig;
-import com.wang.constant.RpcConstant;
 import com.wang.model.ServiceMetaInfo;
 import com.wang.registry.LocalRegistry;
 import com.wang.registry.Registry;
 import com.wang.registry.RegistryFactory;
-import com.wang.server.VertHttpServer;
+import com.wang.server.VertxHttpServer;
 import com.wang.service.UserService;
 import com.wang.service.UserServiceImpl;
-
-import java.util.List;
 
 /**
  * @author wanglibin
@@ -42,7 +38,11 @@ public class ProviderExample {
         }
 
         // 启动web服务器
-        VertHttpServer vertHttpServer = new VertHttpServer();
-        vertHttpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+//        VertxHttpServer vertxHttpServer = new VertxHttpServer();
+//        vertxHttpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+
+        // 启动TCP
+        VertxHttpServer vertxHttpServer = new VertxHttpServer();
+        vertxHttpServer.doStart(8888);
     }
 }

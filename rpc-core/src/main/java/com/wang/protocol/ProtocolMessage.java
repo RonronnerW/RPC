@@ -22,7 +22,7 @@ public class ProtocolMessage<T> {
     private T body;
 
     @Data
-    private class Header {
+    public static class Header {
         /**
          * 魔数
          */
