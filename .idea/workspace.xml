@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="11accd38-145c-4ba0-ae47-bfacae6fb5bb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" afterDir="false" />
     </list>
@@ -67,6 +68,7 @@
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\system" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wang.retry" />
       <recent name="com.wang.loadbalancer" />
       <recent name="com.wang.server.tcp" />
       <recent name="com.wang.registry" />
@@ -183,7 +185,7 @@
       <workItem from="1714724545987" duration="16266000" />
       <workItem from="1714784450321" duration="12198000" />
       <workItem from="1714872944780" duration="10013000" />
-      <workItem from="1714965270035" duration="31779000" />
+      <workItem from="1714965270035" duration="35455000" />
     </task>
     <servers />
   </component>
@@ -207,11 +209,6 @@
           <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpServerHandler.java</url>
           <line>20</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/VertxTcpClient.java</url>

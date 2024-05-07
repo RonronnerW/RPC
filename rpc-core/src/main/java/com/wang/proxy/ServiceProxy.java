@@ -15,6 +15,8 @@ import com.wang.model.ServiceMetaInfo;
 import com.wang.protocol.*;
 import com.wang.registry.Registry;
 import com.wang.registry.RegistryFactory;
+import com.wang.retry.RetryStrategy;
+import com.wang.retry.RetryStrategyFactory;
 import com.wang.serializer.JdkSerializer;
 import com.wang.serializer.Serializer;
 import com.wang.serializer.SerializerFactory;
@@ -30,6 +32,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -72,8 +75,14 @@ public class ServiceProxy implements InvocationHandler {
         requestParams.put("methodName", rpcRequest.getMethodName());
         ServiceMetaInfo selected = loadBalancer.select(requestParams, serviceMetaInfoList);
 
-        // 发送TCP请求
-        RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selected);
+        // 使用重试机制发送HTTP请求
+        RetryStrategy retryStrategy = RetryStrategyFactory.getInstance(RpcApplication.getRpcConfig().getRetryStrategy());
+        RpcResponse rpcResponse = retryStrategy.doRetry(new Callable<RpcResponse>() {
+            @Override
+            public RpcResponse call() throws Exception {
+                return VertxTcpClient.doRequest(rpcRequest, selected);
+            }
+        });
         return rpcResponse.getData();
     }
 }

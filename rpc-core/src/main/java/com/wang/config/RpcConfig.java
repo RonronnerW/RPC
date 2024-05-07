@@ -1,6 +1,7 @@
 package com.wang.config;
 
 import com.wang.loadbalancer.LoadBalancerKeys;
+import com.wang.retry.RetryStrategyKeys;
 import com.wang.serializer.SerializerKeys;
 import lombok.Data;
 
@@ -45,4 +46,9 @@ public class RpcConfig {
      * 负载均衡器
      */
     private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
+
+    /**
+     * 负载均衡策略
+     */
+    private String retryStrategy = RetryStrategyKeys.NO;
 }
