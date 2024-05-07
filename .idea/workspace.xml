@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="11accd38-145c-4ba0-ae47-bfacae6fb5bb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/rpc.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rpc.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/EtcdRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/EtcdRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/test/java/com/wang/registry/RegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/test/java/com/wang/registry/RegistryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -47,7 +43,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Maven/repository/io/vertx/vertx-core/4.5.7/vertx-core-4.5.7.jar",
+    "last_opened_file_path": "E:/项目/RPC/rpc-core/src/main/resources/META-INF/rpc/system",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,16 +61,18 @@
       <recent name="com.wang.server.tcp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\项目\RPC\rpc-core\src\main\resources\META-INF\rpc\system" />
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INF\rpc\system" />
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\custom" />
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\system" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wang.loadbalancer" />
       <recent name="com.wang.server.tcp" />
       <recent name="com.wang.registry" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ConsumerExample">
+  <component name="RunManager" selected="JUnit.LoadBalancerTest.select">
     <configuration name="ConsumerExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wang.ConsumerExample" />
       <module name="example-consumer" />
@@ -101,6 +99,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoadBalancerTest.select" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpc-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wang.loadbalancer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wang.loadbalancer" />
+      <option name="MAIN_CLASS_NAME" value="com.wang.loadbalancer.LoadBalancerTest" />
+      <option name="METHOD_NAME" value="select" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProtocolMessageTest.testEncodeAndDecode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpc-core" />
       <extension name="coverage">
@@ -113,21 +127,6 @@
       <option name="MAIN_CLASS_NAME" value="com.wang.protocol.ProtocolMessageTest" />
       <option name="METHOD_NAME" value="testEncodeAndDecode" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegistryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rpc-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wang.registry.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wang.registry" />
-      <option name="MAIN_CLASS_NAME" value="com.wang.registry.RegistryTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoadBalancerTest.select" />
         <item itemvalue="Application.ConsumerExample" />
         <item itemvalue="Application.ProviderExample" />
         <item itemvalue="JUnit.ProtocolMessageTest.testEncodeAndDecode" />
         <item itemvalue="JUnit.RegistryTest.heartBeat" />
-        <item itemvalue="JUnit.RegistryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +183,7 @@
       <workItem from="1714724545987" duration="16266000" />
       <workItem from="1714784450321" duration="12198000" />
       <workItem from="1714872944780" duration="10013000" />
-      <workItem from="1714965270035" duration="26303000" />
+      <workItem from="1714965270035" duration="31779000" />
     </task>
     <servers />
   </component>
@@ -210,13 +209,8 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxyFactory.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java</url>
-          <line>68</line>
+          <line>75</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

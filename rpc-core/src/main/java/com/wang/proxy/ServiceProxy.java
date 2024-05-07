@@ -7,6 +7,8 @@ import cn.hutool.http.HttpResponse;
 import com.wang.RpcApplication;
 import com.wang.config.RpcConfig;
 import com.wang.constant.RpcConstant;
+import com.wang.loadbalancer.LoadBalancer;
+import com.wang.loadbalancer.LoadBalancerFactory;
 import com.wang.model.RpcRequest;
 import com.wang.model.RpcResponse;
 import com.wang.model.ServiceMetaInfo;
@@ -26,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -62,11 +65,15 @@ public class ServiceProxy implements InvocationHandler {
         if (CollUtil.isEmpty(serviceMetaInfoList)) {
             throw new RuntimeException("暂无服务地址");
         }
-        // 4. 暂时先获取第一个注册中心地址
-        ServiceMetaInfo metaInfo = serviceMetaInfoList.get(0);
+        // 4. 负载均衡获取一个注册中心地址
+        LoadBalancer loadBalancer = LoadBalancerFactory.getInstance(RpcApplication.getRpcConfig().getLoadBalancer());
+        // 使用方法名（请求路径）作为请求参数，使用一致性hash时，调用相同方法请求参数相同，所以总会请求到同一个服务器
+        HashMap<String, Object> requestParams = new HashMap<>();
+        requestParams.put("methodName", rpcRequest.getMethodName());
+        ServiceMetaInfo selected = loadBalancer.select(requestParams, serviceMetaInfoList);
 
         // 发送TCP请求
-        RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, metaInfo);
+        RpcResponse rpcResponse = VertxTcpClient.doRequest(rpcRequest, selected);
         return rpcResponse.getData();
     }
 }
