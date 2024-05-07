@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 public class TcpServerHandler implements Handler<NetSocket> {
     @Override
     public void handle(NetSocket netSocket) {
-        netSocket.handler(buffer -> {
+        TcpBufferHandlerWrapper tcpBufferHandlerWrapper = new TcpBufferHandlerWrapper(buffer -> {
             // 解码
             ProtocolMessage protocolMessage = null;
             try {
@@ -54,6 +54,8 @@ public class TcpServerHandler implements Handler<NetSocket> {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
         });
+        netSocket.handler(tcpBufferHandlerWrapper);
     }
 }
