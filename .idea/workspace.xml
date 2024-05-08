@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="11accd38-145c-4ba0-ae47-bfacae6fb5bb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/rpc.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rpc.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" afterDir="false" />
     </list>
@@ -44,7 +44,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/项目/RPC/rpc-core/src/main/resources/META-INF/rpc/system",
+    "last_opened_file_path": "E:/项目/RPC/rpc-core/src/main/java/com/wang/tolerant",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,19 +62,21 @@
       <recent name="com.wang.server.tcp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\项目\RPC\rpc-core\src\main\java\com\wang\tolerant" />
+      <recent name="E:\项目\RPC\rpc-core\src\main\java\com\wang" />
+      <recent name="E:\项目\RPC\rpc-core\src\main\resources\META-INF\rpc\custom" />
       <recent name="E:\项目\RPC\rpc-core\src\main\resources\META-INF\rpc\system" />
       <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INF\rpc\system" />
-      <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\custom" />
-      <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INFO\rpc\system" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wang.tolerant" />
       <recent name="com.wang.retry" />
       <recent name="com.wang.loadbalancer" />
       <recent name="com.wang.server.tcp" />
       <recent name="com.wang.registry" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoadBalancerTest.select">
+  <component name="RunManager" selected="Application.ConsumerExample">
     <configuration name="ConsumerExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wang.ConsumerExample" />
       <module name="example-consumer" />
@@ -164,9 +166,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoadBalancerTest.select" />
         <item itemvalue="Application.ConsumerExample" />
         <item itemvalue="Application.ProviderExample" />
+        <item itemvalue="JUnit.LoadBalancerTest.select" />
         <item itemvalue="JUnit.ProtocolMessageTest.testEncodeAndDecode" />
         <item itemvalue="JUnit.RegistryTest.heartBeat" />
       </list>
@@ -185,7 +187,7 @@
       <workItem from="1714724545987" duration="16266000" />
       <workItem from="1714784450321" duration="12198000" />
       <workItem from="1714872944780" duration="10013000" />
-      <workItem from="1714965270035" duration="35455000" />
+      <workItem from="1714965270035" duration="40371000" />
     </task>
     <servers />
   </component>
@@ -219,11 +221,6 @@
           <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/VertxTcpClient.java</url>
           <line>55</line>
           <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/VertxTcpClient.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

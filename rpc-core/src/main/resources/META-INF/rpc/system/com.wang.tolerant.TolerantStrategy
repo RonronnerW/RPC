@@ -1,0 +1,4 @@
+failBack=com.wang.tolerant.FailBackTolerantStrategy
+failFast=com.wang.tolerant.FailFastTolerantStrategy
+failOver=com.wang.tolerant.FailOverTolerantStrategy
+failSafe=com.wang.tolerant.FailSafeTolerantStrategy

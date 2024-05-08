@@ -21,6 +21,8 @@ import com.wang.serializer.JdkSerializer;
 import com.wang.serializer.Serializer;
 import com.wang.serializer.SerializerFactory;
 import com.wang.server.tcp.VertxTcpClient;
+import com.wang.tolerant.TolerantStrategy;
+import com.wang.tolerant.TolerantStrategyFactory;
 import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetClient;
@@ -32,6 +34,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 
@@ -44,8 +48,6 @@ import java.util.concurrent.CompletableFuture;
 public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        // 指定序列化器
-        Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         String serviceName = method.getDeclaringClass().getName();
         // 构造请求
@@ -76,13 +78,17 @@ public class ServiceProxy implements InvocationHandler {
         ServiceMetaInfo selected = loadBalancer.select(requestParams, serviceMetaInfoList);
 
         // 使用重试机制发送HTTP请求
-        RetryStrategy retryStrategy = RetryStrategyFactory.getInstance(RpcApplication.getRpcConfig().getRetryStrategy());
-        RpcResponse rpcResponse = retryStrategy.doRetry(new Callable<RpcResponse>() {
-            @Override
-            public RpcResponse call() throws Exception {
-                return VertxTcpClient.doRequest(rpcRequest, selected);
-            }
-        });
-        return rpcResponse.getData();
+        RpcResponse rpcResponse = null;
+        try {
+            RetryStrategy retryStrategy = RetryStrategyFactory.getInstance(RpcApplication.getRpcConfig().getRetryStrategy());
+            rpcResponse = retryStrategy.doRetry(() -> VertxTcpClient.doRequest(rpcRequest, selected));
+        } catch (Exception e) {
+            // 容错机制
+            TolerantStrategy tolerantStrategy = TolerantStrategyFactory.getInstance(RpcApplication.getRpcConfig().getTolerantStrategy());
+            Map<String, Object> context = new HashMap<>();
+            context.put("rpcResponse", rpcResponse);
+            tolerantStrategy.doTolerant(context, e);
+        }
+        return Objects.requireNonNull(rpcResponse).getData();
     }
 }

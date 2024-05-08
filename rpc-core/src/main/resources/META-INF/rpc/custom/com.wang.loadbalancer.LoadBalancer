@@ -1,0 +1,3 @@
+roundRobin=com.wang.loadbalancer.RoundRobinLoadBalancer
+random=com.wang.loadbalancer.RandomLoadBalancer
+consistentHash=com.wang.loadbalancer.ConsistentHashLoadBalancer

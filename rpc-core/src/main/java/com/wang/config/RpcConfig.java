@@ -3,6 +3,8 @@ package com.wang.config;
 import com.wang.loadbalancer.LoadBalancerKeys;
 import com.wang.retry.RetryStrategyKeys;
 import com.wang.serializer.SerializerKeys;
+import com.wang.tolerant.TolerantStrategy;
+import com.wang.tolerant.TolerantStrategyKeys;
 import lombok.Data;
 
 /**
@@ -51,4 +53,9 @@ public class RpcConfig {
      * 负载均衡策略
      */
     private String retryStrategy = RetryStrategyKeys.NO;
+
+    /**
+     * 容错策略
+     */
+    private String tolerantStrategy = TolerantStrategyKeys.FAIL_SAFE;
 }
