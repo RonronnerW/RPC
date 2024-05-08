@@ -1,5 +1,6 @@
 package com.wang;
 
+import com.wang.bootstrap.ConsumerBootstrap;
 import com.wang.config.RpcConfig;
 import com.wang.model.User;
 import com.wang.proxy.ServiceProxyFactory;
@@ -12,25 +13,20 @@ import com.wang.utils.ConfigUtils;
  */
 public class ConsumerExample {
     public static void main(String[] args) {
-        RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
-        System.out.println(rpc.getName());
-        System.out.println(rpc.getVersion());
-        System.out.println(rpc.getServerHost());
-        System.out.println(rpc.getServerPort());
+        // 初始化配置中心和注册中心
+        ConsumerBootstrap.init();
 
+        // 获取代理
+        UserService userService = ServiceProxyFactory.getProxy(UserService.class);
         User user = new User();
         user.setName("wang");
-        // 使用工厂来获取动态代理对象
-        UserService userService = ServiceProxyFactory.getProxy(UserService.class);
-        User newUser = userService.getUser(user);
-        if(newUser==null) {
-            System.out.println("user==null");
+        // 调用
+        User serviceUser = userService.getUser(user);
+
+        if(serviceUser==null) {
+            System.out.println("serviceUser=null");
         } else {
-            System.out.println(user.getName());
+            System.out.println("serviceUser=null="+serviceUser.getName());
         }
-
-        int number = userService.getNumber();
-        System.out.println("number = " + number);
-
     }
 }

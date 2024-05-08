@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -10,6 +11,9 @@
         <option value="$PROJECT_DIR$/example-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/example-producer/pom.xml" />
         <option value="$PROJECT_DIR$/example-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/rpc-spring-boot-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/example-spring-boot-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/example-spring-boot-consumer/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

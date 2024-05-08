@@ -77,7 +77,7 @@ public class ServiceProxy implements InvocationHandler {
         requestParams.put("methodName", rpcRequest.getMethodName());
         ServiceMetaInfo selected = loadBalancer.select(requestParams, serviceMetaInfoList);
 
-        // 使用重试机制发送HTTP请求
+        // 使用重试机制发送TCP请求
         RpcResponse rpcResponse = null;
         try {
             RetryStrategy retryStrategy = RetryStrategyFactory.getInstance(RpcApplication.getRpcConfig().getRetryStrategy());

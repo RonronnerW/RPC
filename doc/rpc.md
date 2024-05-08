@@ -804,3 +804,74 @@ Java可以使用 Guava-Retrying 库实现多种不同的重试机制
 
 
 开发实现与重试机制相似，在多次重试失败抛出异常时从工厂获取容错策略并执行。
+
+
+
+## 启动机制和注解驱动机制
+
+
+
+注解驱动实现两种方式：
+
+1. 主动扫描：让开发者指定要扫描的路径，然后遍历所有类文件，针对有注解的类文件，执行自定义操作
+2. 监听Bean加载：在Spring项目中，可以通过实现 BeanPostProcessor 接口，在bean初始化后执行自定义操作
+
+
+
+### 启动机制
+
+服务提供者启动类：ProviderBootstrap 类，支持用户传入自己要注册的服务。初始化、注册服务，启动web服务器
+
+服务消费者启动类：RPC框架初始化配置中心、注册中心
+
+
+
+### 注解驱动机制
+
+1. SpringBoot项目初始化
+
+2. 定义注解
+
+   @EnableRpc：全局标识项目需要引入RPC框架、执行初始化方法
+
+   @RpcService：服务提供者注解
+
+   @RpcReference：服务消费者注解
+
+3. 注解驱动：针对注解创建启动类
+
+   RpcInitBootstrap：通过实现 ImportBeanDefinitionRegistrar 接口，获取注解的属性并初始化RPC框架
+
+   RpcProviderBootstrap：通过实现 BeanPostProcessor 接口的 postProcessAfterInitialization 方法，获取所有包含@RpcService注解的类，通过注解的属性和反射机制获取要注册的服务信息，完成服务注册
+
+   RpcConsumerBootstrap：和服务提供者启动类相似
+
+4. 注册已编写的启动类：仅使用了@EnableRpc注解时才启动RPC框架
+
+
+
+## 扩展
+
+1. 实现拦截器机制，服务调用前和调用后可以执行额外的操作
+
+   参考SpringMVC或者Servelt的Filter机制，使用责任链模式实现，在服务调用前后增加拦截器，用于日志校验、安全检查等
+
+2. 自定义异常
+
+   实现RpcException，根据业务区分错误码，比如消费端异常、提供者异常、注册中心异常等
+
+3. 支持消费方指定某个服务级别的负载均衡、重试、容错机制
+
+   修改ServiceProxy类，让他支持传参，根据消费端配置动态创建ServiceProxy
+
+4. 支持服务分组
+
+5. 服务消费端设置超是时间
+
+6. 处理bean注入问题
+
+   本地服务注册表存储的是class，然后通过反射创建实例，但如果bean包含有参构造函数，或者给属性注入了其他实例，这种方式就行不通了。解决：本地注册时放入实现类的对象实例，而不是class类型
+
+7. 服务注册信息缓存优化
+
+   支持区分key，给本地缓存增加过期时间、定期刷新缓存。使用Caffeine构建缓存

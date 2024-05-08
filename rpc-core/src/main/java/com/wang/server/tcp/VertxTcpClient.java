@@ -10,11 +10,12 @@ import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetClient;
 import io.vertx.core.net.NetSocket;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-
+@Slf4j
 public class VertxTcpClient {
 
     /**
@@ -34,7 +35,7 @@ public class VertxTcpClient {
         netClient.connect(serviceMetaInfo.getServicePort(), serviceMetaInfo.getServiceHost(),
                 result -> {
                     if (!result.succeeded()) {
-                        System.err.println("Failed to connect to TCP server");
+                        log.error("Failed to connect to TCP server");
                         return;
                     }
                     NetSocket socket = result.result();
