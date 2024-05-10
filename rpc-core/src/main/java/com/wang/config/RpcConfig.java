@@ -50,12 +50,12 @@ public class RpcConfig {
     private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
 
     /**
-     * 负载均衡策略
+     * 重试策略
      */
-    private String retryStrategy = RetryStrategyKeys.NO;
+    private String retryStrategy = RetryStrategyKeys.FIXED_TIME_RETRY;
 
     /**
      * 容错策略
      */
-    private String tolerantStrategy = TolerantStrategyKeys.FAIL_SAFE;
+    private String tolerantStrategy = TolerantStrategyKeys.FAIL_FAST;
 }

@@ -16,7 +16,10 @@ class ExampleSpringBootConsumerApplicationTests {
 
 	@Test
 	void test() {
-		exampleService.test();
+		while (true) {
+			exampleService.test();
+		}
+
 	}
 
 }

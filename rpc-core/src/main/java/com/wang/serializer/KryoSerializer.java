@@ -3,6 +3,7 @@ package com.wang.serializer;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -10,6 +11,7 @@ import java.io.ByteArrayOutputStream;
 /**
  * Kryo 序列化器
  */
+@Slf4j
 public class KryoSerializer implements Serializer {
     /**
      * kryo 线程不安全，使用 ThreadLocal 保证每个线程只有一个 Kryo
@@ -23,19 +25,29 @@ public class KryoSerializer implements Serializer {
 
     @Override
     public <T> byte[] serialize(T obj) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        Output output = new Output(byteArrayOutputStream);
-        KRYO_THREAD_LOCAL.get().writeObject(output, obj);
-        output.close();
-        return byteArrayOutputStream.toByteArray();
+        try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+             Output output = new Output(byteArrayOutputStream)) {
+            Kryo kryo = KRYO_THREAD_LOCAL.get();
+            // Object->byte:将对象序列化为byte数组
+            kryo.writeObject(output, obj);
+//            kryoThreadLocal.remove();
+            return output.toBytes();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public <T> T deserialize(byte[] bytes, Class<T> classType) {
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
-        Input input = new Input(byteArrayInputStream);
-        T result = KRYO_THREAD_LOCAL.get().readObject(input, classType);
-        input.close();
-        return result;
+        try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
+             Input input = new Input(byteArrayInputStream)) {
+            Kryo kryo = KRYO_THREAD_LOCAL.get();
+            // byte->Object:从byte数组中反序列化出对象
+            Object o = kryo.readObject(input, classType);
+//            KRYO_THREAD_LOCAL.remove();
+            return classType.cast(o);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -17,7 +17,7 @@ public class ExponentialTimeRetryStrategy implements RetryStrategy{
         Retryer<RpcResponse> retryer = RetryerBuilder.<RpcResponse>newBuilder()
                 .retryIfExceptionOfType(Exception.class)// 发生异常重试
                 .withWaitStrategy(WaitStrategies.exponentialWait())
-                .withStopStrategy(StopStrategies.stopAfterAttempt(5))
+                .withStopStrategy(StopStrategies.stopAfterAttempt(3))
                 .withRetryListener(new RetryListener() {
                     @Override
                     public <V> void onRetry(Attempt<V> attempt) {

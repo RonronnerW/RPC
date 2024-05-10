@@ -8,10 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -116,7 +113,7 @@ public class SpiLoader {
                         if (strArray.length > 1) {
                             String key = strArray[0];
                             String className = strArray[1];
-                            keyClassMap.put(key, Class.forName(className));
+                            keyClassMap.put(key, Class.forName(className));// 通过类的全路径获取Class对象
                         }
                     }
                 } catch (Exception e) {

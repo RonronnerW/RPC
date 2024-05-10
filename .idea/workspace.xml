@@ -5,33 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11accd38-145c-4ba0-ae47-bfacae6fb5bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/src/main/java/com/example/examplespringbootprovider/ExampleSpringBootProviderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-spring-boot-provider/src/test/java/com/example/examplespringbootprovider/ExampleSpringBootProviderApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/src/main/java/com/wang/rpcspringbootstarter/RpcSpringBootStarterApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-spring-boot-starter/src/test/java/com/wang/rpcspringbootstarter/RpcSpringBootStarterApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/rpc.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rpc.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-consumer/src/main/java/com/wang/ConsumerExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/src/main/java/com/wang/ConsumerExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-provider/src/main/java/com/wang/ProviderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-provider/src/main/java/com/wang/ProviderExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-spring-boot-consumer/src/test/java/com/example/examplespringbootconsumer/ExampleSpringBootConsumerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-spring-boot-consumer/src/test/java/com/example/examplespringbootconsumer/ExampleSpringBootConsumerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/LoadBalancerKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/LoadBalancerKeys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/VertxTcpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/VertxTcpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/LocalRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/LocalRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/ExponentialTimeRetryStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/ExponentialTimeRetryStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/RetryStrategyKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/RetryStrategyKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/KryoSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/KryoSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/spi/SpiLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/spi/SpiLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/tolerant/TolerantStrategyKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/tolerant/TolerantStrategyKeys.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +49,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -102,7 +91,7 @@
       <recent name="com.wang.server.tcp" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ExampleSpringBootProviderApplication">
+  <component name="RunManager" selected="JUnit.ExampleSpringBootConsumerApplicationTests.test">
     <configuration name="ConsumerExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wang.ConsumerExample" />
       <module name="example-consumer" />
@@ -234,7 +223,8 @@
       <workItem from="1714724545987" duration="16266000" />
       <workItem from="1714784450321" duration="12198000" />
       <workItem from="1714872944780" duration="10013000" />
-      <workItem from="1714965270035" duration="49046000" />
+      <workItem from="1714965270035" duration="49713000" />
+      <workItem from="1715234916559" duration="20657000" />
     </task>
     <servers />
   </component>
@@ -255,49 +245,9 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpServerHandler.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/bootstrap/ProviderBootstrap.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/bootstrap/ProviderBootstrap.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/EtcdRegistry.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/EtcdRegistry.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/bootstrap/ProviderBootstrap.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/VertxHttpServer.java</url>
           <line>32</line>
           <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/example-consumer/src/main/java/com/wang/ConsumerExample.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/example-consumer/src/main/java/com/wang/ConsumerExample.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpBufferHandlerWrapper.java</url>

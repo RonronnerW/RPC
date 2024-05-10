@@ -7,6 +7,7 @@ import java.util.Map;
 /**
  * @author wanglibin
  * @version 1.0
+ * 本地服务注册器
  */
 public class LocalRegistry {
     /**
