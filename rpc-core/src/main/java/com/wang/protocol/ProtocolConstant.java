@@ -16,4 +16,8 @@ public interface ProtocolConstant {
      * 版本号
      */
     byte VERSION = 0x1;
+
+    byte STATUS_OK = 0x20;
+
+    byte STATUS_ERROR = 0x40;
 }

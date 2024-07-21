@@ -17,9 +17,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Import({RpcInitBootstrap.class, RpcProviderBootstrap.class, RpcConsumerBootstrap.class})
 public @interface EnableRpc {
-    /**
-     * 是否启动服务器
-     * @return
-     */
-    boolean needServer() default true;
 }

@@ -36,7 +36,7 @@ public class RpcApplication {
     }
 
     /**
-     * 初始化 - 使用双检锁单例模式
+     * 初始化
      */
     public static void init() {
         RpcConfig newRpcConfig = null;

@@ -13,12 +13,12 @@ import java.util.List;
 
 public class RegistryTest {
 
-    final Registry registry = new EtcdRegistry();
+    final Registry registry = new ZookeeperRegistry();
 
     @Before
     public void init() {
         RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setAddress("http://localhost:2379");
+        registryConfig.setAddress("http://121.41.226.62:2181");
         registry.init(registryConfig);
     }
 
@@ -30,18 +30,19 @@ public class RegistryTest {
         serviceMetaInfo.setServiceHost("localhost");
         serviceMetaInfo.setServicePort(1234);
         registry.register(serviceMetaInfo);
-        serviceMetaInfo = new ServiceMetaInfo();
-        serviceMetaInfo.setServiceName("myService");
-        serviceMetaInfo.setServiceVersion("1.0");
-        serviceMetaInfo.setServiceHost("localhost");
-        serviceMetaInfo.setServicePort(1235);
-        registry.register(serviceMetaInfo);
-        serviceMetaInfo = new ServiceMetaInfo();
-        serviceMetaInfo.setServiceName("myService");
-        serviceMetaInfo.setServiceVersion("2.0");
-        serviceMetaInfo.setServiceHost("localhost");
-        serviceMetaInfo.setServicePort(1234);
-        registry.register(serviceMetaInfo);
+//        serviceMetaInfo = new ServiceMetaInfo();
+//        serviceMetaInfo.setServiceName("myService");
+//        serviceMetaInfo.setServiceVersion("1.0");
+//        serviceMetaInfo.setServiceHost("localhost");
+//        serviceMetaInfo.setServicePort(1235);
+//        registry.register(serviceMetaInfo);
+//        serviceMetaInfo = new ServiceMetaInfo();
+//        serviceMetaInfo.setServiceName("myService");
+//        serviceMetaInfo.setServiceVersion("2.0");
+//        serviceMetaInfo.setServiceHost("localhost");
+//        serviceMetaInfo.setServicePort(1234);
+//        registry.register(serviceMetaInfo);
+        while(true);
     }
 
     @Test

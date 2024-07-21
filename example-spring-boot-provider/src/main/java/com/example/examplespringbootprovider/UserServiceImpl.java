@@ -14,8 +14,4 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
-    @Override
-    public int getNumber() {
-        return 1;
-    }
 }

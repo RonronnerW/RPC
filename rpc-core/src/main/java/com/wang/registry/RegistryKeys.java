@@ -8,6 +8,6 @@ package com.wang.registry;
 public interface RegistryKeys {
     String ETCD = "etcd";
     String ZOOKEEPER = "zookeeper";
-    String ADDRESS = "http://localhost:2380";
-    Long TIMEOUT = 1000L;
+    String ADDRESS = "http://localhost:2181"; // etcd
+    Long TIMEOUT = 10000L;
 }

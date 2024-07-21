@@ -1,10 +1,17 @@
 package com.wang.serializer;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JacksonException;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.google.gson.*;
 import com.wang.model.RpcRequest;
 import com.wang.model.RpcResponse;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author wanglibin
@@ -13,6 +20,12 @@ import java.io.IOException;
  */
 public class JsonSerializer implements Serializer {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    static {
+        // 忽略未知属性
+        OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        // 允许空的 bean 序列化
+        OBJECT_MAPPER.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+    }
 
     @Override
     public <T> byte[] serialize(T obj) throws IOException {
@@ -30,6 +43,7 @@ public class JsonSerializer implements Serializer {
         }
         return obj;
     }
+
 
     /**
      * 由于 Object 的原始对象会被擦除，导致反序列化时会被作为 LinkedHashMap 无法转换成原始对象，因此这里做了特殊处理

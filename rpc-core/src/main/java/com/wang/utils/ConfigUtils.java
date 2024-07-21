@@ -30,6 +30,7 @@ public class ConfigUtils {
      * @param <T>
      */
     public static  <T> T loadConfig(Class<T> tClass, String prefix, String environment) {
+
         StringBuilder configFileBuilder = new StringBuilder("application");
         if(StrUtil.isNotBlank(environment)) {
             configFileBuilder.append("-").append(environment);

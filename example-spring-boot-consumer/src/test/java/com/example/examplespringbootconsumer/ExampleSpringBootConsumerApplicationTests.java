@@ -7,18 +7,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ExampleSpringBootConsumerApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
 	@Resource
 	private ExampleServiceImpl exampleService;
 
 	@Test
 	void test() {
-		while (true) {
-			exampleService.test();
-		}
+
+		exampleService.test();
 
 	}
 

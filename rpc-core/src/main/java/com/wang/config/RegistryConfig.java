@@ -9,7 +9,7 @@ public class RegistryConfig {
     /**
      * 注册中心类别
      */
-    private String registry = RegistryKeys.ETCD;
+    private String registry = RegistryKeys.ZOOKEEPER;
 
     /**
      * 注册中心地址

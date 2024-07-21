@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
  * @version 1.0
  */
 @Slf4j
-public class MockServiceProxy implements InvocationHandler {
+public class MockClientProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Class<?> returnType = method.getReturnType();

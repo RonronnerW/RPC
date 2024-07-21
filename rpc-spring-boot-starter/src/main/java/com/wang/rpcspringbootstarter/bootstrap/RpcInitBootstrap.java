@@ -3,7 +3,7 @@ package com.wang.rpcspringbootstarter.bootstrap;
 import com.wang.RpcApplication;
 import com.wang.rpcspringbootstarter.annotation.EnableRpc;
 import com.wang.config.RpcConfig;
-import com.wang.server.tcp.VertxTcpServer;
+import com.wang.server.NettyServer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
@@ -23,21 +23,14 @@ public class RpcInitBootstrap implements ImportBeanDefinitionRegistrar {
      */
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
-        // 获取 EnableRpc 注解的属性值
-        Boolean needServer = (Boolean) importingClassMetadata.getAnnotationAttributes(EnableRpc.class.getName()).get("needServer");
-
         // 框架初始化
         RpcApplication.init();
 
-        // 全局配置
         RpcConfig rpcConfig = RpcApplication.getRpcConfig();
-        // 启动服务器
-        if(needServer) {
-            VertxTcpServer vertxTcpServer = new VertxTcpServer();
-            vertxTcpServer.doStart(rpcConfig.getServerPort());
-        } else {
-            log.info("不启动服务器");
-        }
+
+        // 启动server
+        NettyServer server = new NettyServer();
+        server.doStart(rpcConfig.getServerPort());
 
     }
 }

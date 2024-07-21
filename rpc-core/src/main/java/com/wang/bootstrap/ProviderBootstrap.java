@@ -8,7 +8,8 @@ import com.wang.model.ServiceRegisterInfo;
 import com.wang.registry.LocalRegistry;
 import com.wang.registry.Registry;
 import com.wang.registry.RegistryFactory;
-import com.wang.server.VertxHttpServer;
+import com.wang.server.NettyServer;
+import io.vertx.grpc.VertxServer;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class ProviderBootstrap {
             Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
             ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
             serviceMetaInfo.setServiceName(serviceName);
+            serviceMetaInfo.setServiceVersion(rpcConfig.getVersion());
             serviceMetaInfo.setServiceHost(rpcConfig.getServerHost());
             serviceMetaInfo.setServicePort(rpcConfig.getServerPort());
 
@@ -44,8 +46,8 @@ public class ProviderBootstrap {
                 throw new RuntimeException(e);
             }
         }
-        // 启动TCP 服务器
-        VertxHttpServer vertxHttpServer = new VertxHttpServer();
-        vertxHttpServer.doStart(rpcConfig.getServerPort());
+        // 启动server
+        NettyServer server = new NettyServer();
+        server.doStart(rpcConfig.getServerPort());
     }
 }

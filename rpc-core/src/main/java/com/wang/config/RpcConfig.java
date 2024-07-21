@@ -2,8 +2,7 @@ package com.wang.config;
 
 import com.wang.loadbalancer.LoadBalancerKeys;
 import com.wang.retry.RetryStrategyKeys;
-import com.wang.serializer.SerializerKeys;
-import com.wang.tolerant.TolerantStrategy;
+import com.wang.serializer.SerializerEnum;
 import com.wang.tolerant.TolerantStrategyKeys;
 import lombok.Data;
 
@@ -37,7 +36,7 @@ public class RpcConfig {
     /**
      * 序列化器
      */
-    private String serializer = SerializerKeys.JDK;
+    private String serializer = SerializerEnum.JDK.getSerializer();
 
     /**
      * 注册中心配置
@@ -52,7 +51,7 @@ public class RpcConfig {
     /**
      * 重试策略
      */
-    private String retryStrategy = RetryStrategyKeys.FIXED_TIME_RETRY;
+    private RetryStrategyConfig retryStrategyConfig = new RetryStrategyConfig();
 
     /**
      * 容错策略

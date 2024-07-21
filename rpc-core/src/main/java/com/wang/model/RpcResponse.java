@@ -1,9 +1,6 @@
 package com.wang.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -12,11 +9,12 @@ import java.util.Calendar;
  * @author wanglibin
  * @version 1.0
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RpcResponse implements Serializable {
+public class RpcResponse extends Message {
     /**
      * 响应数据
      */
@@ -36,4 +34,9 @@ public class RpcResponse implements Serializable {
      * 异常信息
      */
     private Exception exception;
+
+    @Override
+    public int getMessageType() {
+        return RPC_RESPONSE;
+    }
 }

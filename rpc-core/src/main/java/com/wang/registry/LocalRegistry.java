@@ -3,6 +3,7 @@ package com.wang.registry;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author wanglibin
@@ -13,7 +14,7 @@ public class LocalRegistry {
     /**
      * 注册信息存储
      */
-    private static final Map<String, Class<?>> map = new HashMap<>();
+    private static final Map<String, Class<?>> map = new ConcurrentHashMap<>();
 
     /**
      * 注册服务

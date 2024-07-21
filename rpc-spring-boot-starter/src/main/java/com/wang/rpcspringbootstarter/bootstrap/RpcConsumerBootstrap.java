@@ -1,6 +1,6 @@
 package com.wang.rpcspringbootstarter.bootstrap;
 
-import com.wang.proxy.ServiceProxyFactory;
+import com.wang.proxy.ClientProxyFactory;
 import com.wang.rpcspringbootstarter.annotation.RpcReference;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -24,20 +24,24 @@ public class RpcConsumerBootstrap implements BeanPostProcessor {
      */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        // 获取对象的类
         Class<?> beanClass = bean.getClass();
-        // 遍历对象的所有属性
+        // 遍历对象的所有字段
         Field[] declaredFields = beanClass.getDeclaredFields();
         for (Field field : declaredFields) {
+            // 获取含该注解的字段
             RpcReference rpcReference = field.getAnnotation(RpcReference.class);
             if (rpcReference != null) {
-                // 为属性生成代理对象
+                // 获取接口
                 Class<?> interfaceClass = rpcReference.interfaceClass();
                 if (interfaceClass == void.class) {
                     interfaceClass = field.getType();
                 }
                 field.setAccessible(true);
-                Object proxyObject = ServiceProxyFactory.getProxy(interfaceClass);
+                // 获取代理对象
+                Object proxyObject = ClientProxyFactory.getProxy(interfaceClass);
                 try {
+                    // 将代理对象注入到字段
                     field.set(bean, proxyObject);
                     field.setAccessible(false);
                 } catch (IllegalAccessException e) {

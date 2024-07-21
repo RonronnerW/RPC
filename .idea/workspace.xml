@@ -5,18 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11accd38-145c-4ba0-ae47-bfacae6fb5bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/rpc.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rpc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-common/src/main/java/com/wang/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-common/src/main/java/com/wang/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-consumer/src/main/java/com/wang/ConsumerExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/src/main/java/com/wang/ConsumerExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example-consumer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-provider/src/main/java/com/wang/ProviderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-provider/src/main/java/com/wang/ProviderExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-spring-boot-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example-spring-boot-consumer/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example-spring-boot-consumer/src/test/java/com/example/examplespringbootconsumer/ExampleSpringBootConsumerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/example-spring-boot-consumer/src/test/java/com/example/examplespringbootconsumer/ExampleSpringBootConsumerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/RpcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/RpcApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/bootstrap/ProviderBootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/bootstrap/ProviderBootstrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RegistryConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RegistryConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/config/RpcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/LoadBalancerKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/LoadBalancerKeys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/ConsistentHashLoadBalancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/ConsistentHashLoadBalancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/RandomLoadBalancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/RandomLoadBalancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/RoundRobinLoadBalancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/loadbalancer/RoundRobinLoadBalancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/RpcRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/RpcRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/RpcResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/RpcResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/ServiceMetaInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/model/ServiceMetaInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageSerializerEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/protocol/ProtocolMessageTypeEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/MockServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/MockClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ServiceProxyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/proxy/ClientProxyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/EtcdRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/EtcdRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/LocalRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/LocalRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/RegistryCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/RegistryKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/RegistryKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/ZookeeperRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/registry/ZookeeperRegistry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/ExponentialTimeRetryStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/ExponentialTimeRetryStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/RetryStrategyKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/RetryStrategyKeys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/KryoSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/KryoSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/FixedTimeRetryStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/retry/FixedTimeRetryStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/JsonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/JsonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/SerializerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/SerializerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/serializer/SerializerKeys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/HttpServerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/VertxHttpServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpBufferHandlerWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpServerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/VertxTcpClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/VertxTcpServer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/spi/SpiLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/spi/SpiLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/tolerant/TolerantStrategyKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/tolerant/TolerantStrategyKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/utils/ConfigUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/java/com/wang/utils/ConfigUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/resources/META-INF/rpc/custom/com.wang.retry.RetryStrategy" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/resources/META-INF/rpc/custom/com.wang.retry.RetryStrategy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/main/resources/META-INF/rpc/system/com.wang.retry.RetryStrategy" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/main/resources/META-INF/rpc/system/com.wang.retry.RetryStrategy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/test/java/com/wang/protocol/ProtocolMessageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-core/src/test/java/com/wang/registry/RegistryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-core/src/test/java/com/wang/registry/RegistryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +68,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -59,7 +101,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/项目/RPC/example-spring-boot-consumer",
+    "last_opened_file_path": "E:/项目/netty-learning",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,7 +110,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15429688",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Debugger_Data_Views_Java",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,19 +119,29 @@
       <recent name="com.wang.server.tcp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\项目\RPC\example-provider\src\main" />
       <recent name="E:\项目\RPC\rpc-core\src\main\java\com\wang\tolerant" />
       <recent name="E:\项目\RPC\rpc-core\src\main\java\com\wang" />
       <recent name="E:\项目\RPC\rpc-core\src\main\resources\META-INF\rpc\custom" />
       <recent name="E:\项目\RPC\rpc-core\src\main\resources\META-INF\rpc\system" />
-      <recent name="E:\项目\RPC\RPC\rpc-core\src\main\resources\META-INF\rpc\system" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.wang.protocol" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.wang.annotation" />
-      <recent name="com.wang.tolerant" />
-      <recent name="com.wang.retry" />
-      <recent name="com.wang.loadbalancer" />
-      <recent name="com.wang.server.tcp" />
+      <recent name="com.wang.config" />
+      <recent name="com.wang.registry" />
+      <recent name="com.wang.utils" />
+      <recent name="com.wang.protocol" />
+      <recent name="com.wang.server.handler" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="JUnit.ExampleSpringBootConsumerApplicationTests.test">
     <configuration name="ConsumerExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -105,7 +157,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProviderExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ProviderExample" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wang.ProviderExample" />
       <module name="example-provider" />
       <extension name="coverage">
@@ -150,17 +202,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProtocolMessageTest.testEncodeAndDecode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RegistryTest.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpc-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wang.protocol.*" />
+          <option name="PATTERN" value="com.wang.registry.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wang.protocol" />
-      <option name="MAIN_CLASS_NAME" value="com.wang.protocol.ProtocolMessageTest" />
-      <option name="METHOD_NAME" value="testEncodeAndDecode" />
+      <option name="PACKAGE_NAME" value="com.wang.registry" />
+      <option name="MAIN_CLASS_NAME" value="com.wang.registry.RegistryTest" />
+      <option name="METHOD_NAME" value="register" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,6 +232,7 @@
       </method>
     </configuration>
     <configuration name="ExampleSpringBootConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="--server.port=8083" />
       <module name="example-spring-boot-consumer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.examplespringbootconsumer.ExampleSpringBootConsumerApplication" />
       <method v="2">
@@ -200,13 +253,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ConsumerExample" />
+      <item itemvalue="Application.ProviderExample" />
+      <item itemvalue="JUnit.ExampleSpringBootConsumerApplicationTests.test" />
+      <item itemvalue="JUnit.LoadBalancerTest.select" />
+      <item itemvalue="JUnit.RegistryTest.register" />
+      <item itemvalue="Spring Boot.ExampleSpringBootConsumerApplication" />
+      <item itemvalue="Spring Boot.ExampleSpringBootProviderApplication" />
+      <item itemvalue="Spring Boot.RpcSpringBootStarterApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ExampleSpringBootConsumerApplicationTests.test" />
         <item itemvalue="Application.ConsumerExample" />
         <item itemvalue="Application.ProviderExample" />
+        <item itemvalue="JUnit.RegistryTest.register" />
         <item itemvalue="JUnit.LoadBalancerTest.select" />
-        <item itemvalue="JUnit.ProtocolMessageTest.testEncodeAndDecode" />
       </list>
     </recent_temporary>
   </component>
@@ -225,6 +288,8 @@
       <workItem from="1714872944780" duration="10013000" />
       <workItem from="1714965270035" duration="49713000" />
       <workItem from="1715234916559" duration="20657000" />
+      <workItem from="1721389895379" duration="55333000" />
+      <workItem from="1721565014984" duration="1537000" />
     </task>
     <servers />
   </component>
@@ -245,14 +310,14 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/VertxHttpServer.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpc-core/src/main/java/com/wang/server/tcp/TcpBufferHandlerWrapper.java</url>
           <line>32</line>
           <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rpc-spring-boot-starter/src/main/java/com/wang/rpcspringbootstarter/bootstrap/RpcConsumerBootstrap.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

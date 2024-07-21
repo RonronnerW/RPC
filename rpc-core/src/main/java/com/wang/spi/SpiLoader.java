@@ -113,7 +113,7 @@ public class SpiLoader {
                         if (strArray.length > 1) {
                             String key = strArray[0];
                             String className = strArray[1];
-                            keyClassMap.put(key, Class.forName(className));// 通过类的全路径获取Class对象
+                            keyClassMap.put(key, Class.forName(className));// 通过类的全路径反射获取Class对象
                         }
                     }
                 } catch (Exception e) {

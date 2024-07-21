@@ -38,6 +38,7 @@ public class ServiceMetaInfo {
      */
     public String getServiceKey() {
         return String.format("%s:%s", serviceName, serviceVersion);
+//        return String.format("%s:%s:%s", serviceName, serviceVersion,serviceGroup); //含分组
     }
 
     /**

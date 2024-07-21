@@ -22,16 +22,16 @@ public class SerializerFactory {
 
     /**
      * 静态代码块
-     * 工厂首次加载时就会调用，然后加载序列化器接口的所有实现类，然后调用getInstance方法获取指定实现类对象
+     * 工厂类加载时就会调用，然后加载序列化器接口的所有实现类，然后调用getInstance方法获取指定实现类对象
      */
     static {
         SpiLoader.load(Serializer.class);
     }
 
-    /**
-     * 默认序列化器
-     */
-    private static final Serializer DEFAULT_SERIALIZER = new JdkSerializer();
+//    /**
+//     * 默认序列化器
+//     */
+//    private static final Serializer DEFAULT_SERIALIZER = new JdkSerializer();
 
     /**
      * 获取实例
